@@ -60,7 +60,7 @@ const NavBar = () => {
           <Section style={{ paddingTop: "25px" }}>
             <div>
               <h2>Trips</h2>
-              <button
+              <Button
                 onClick={() => setTripOpen(!tripOpen)}
                 style={{ background: "transparent" }}
               >
@@ -69,10 +69,10 @@ const NavBar = () => {
                 ) : (
                   <CgMathPlus size={20} />
                 )}
-              </button>
+              </Button>
             </div>
             {tripOpen && (
-              <Content className={tripOpen ? "trip-menu active" : "trip-menu"}>
+              <Content>
                 <div
                   style={{
                     display: "flex",
@@ -82,14 +82,17 @@ const NavBar = () => {
                   }}
                 >
                   <p style={{ fontWeight: "bold" }}>Add a trip</p>
-                  <IoIosArrowForward
-                    size={15}
-                    onClick={() => {
-                      setTripOpen(!tripOpen);
-                      setSidebarOpen(!sidebarOpen);
-                      history.push("/plan");
-                    }}
-                  />
+                  <Button>
+                    {" "}
+                    <IoIosArrowForward
+                      size={15}
+                      onClick={() => {
+                        setTripOpen(!tripOpen);
+                        setSidebarOpen(!sidebarOpen);
+                        history.push("/plan");
+                      }}
+                    />
+                  </Button>
                 </div>
                 <Options>
                   {trips?.map((trip) => {
@@ -110,14 +113,16 @@ const NavBar = () => {
           <Section>
             <div>
               <h3>Find new sites to explore</h3>
-              <IoIosArrowForward
-                size={20}
-                onClick={() => {
-                  setTripOpen(!tripOpen);
-                  setSidebarOpen(!sidebarOpen);
-                  history.push("/explore");
-                }}
-              />
+              <Button>
+                <IoIosArrowForward
+                  size={20}
+                  onClick={() => {
+                    setTripOpen(!tripOpen);
+                    setSidebarOpen(!sidebarOpen);
+                    history.push("/explore");
+                  }}
+                />
+              </Button>
             </div>
           </Section>
           <LogoutButton handleButtonClick={logout} buttonText={"Log Out"} />
@@ -130,17 +135,13 @@ const NavBar = () => {
 const Wrapper = styled.div`
   max-width: 100vw;
   height: 14vh;
-
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-
   padding: 7px 15px;
-
   color: white;
   background: ${styling.colorPrimary};
-
   & h2 {
     color: black;
   }
@@ -151,27 +152,25 @@ const LogoContainer = styled.div`
 `;
 
 const Nav = styled.nav`
-  border: 1px solid green;
+  ${onTabletMediaQuery()} {
+    width: 75%;
+  }
+  ${onDesktopMediaQuery()} {
+    width: 60%;
+  }
+  ${onLargeDesktopMediaQuery()} {
+    width: 45%;
+  }
   &.nav-menu {
     display: block;
     height: 100vh;
-    background-color: ${styling.backgroundColor};
+    background-color: white;
     position: fixed;
     top: 0;
     left: -100%;
     transition: ease-in-out 850ms;
     padding: 20px;
     z-index: 5;
-
-    ${onTabletMediaQuery()} {
-      width: 75%;
-    }
-    ${onDesktopMediaQuery()} {
-      width: 60%;
-    }
-    ${onLargeDesktopMediaQuery()} {
-      width: 60%;
-    }
   }
 
   &.nav-menu.active {
@@ -202,15 +201,6 @@ const Content = styled.div`
 const Options = styled.div`
   display: flex;
   flex-direction: column;
-  &.trip-menu {
-    top: -100%;
-    transition: ease-in-out 850ms;
-  }
-
-  &.trip-menu.active {
-    top: 0;
-    transition: ease-in-out 850ms;
-  }
 `;
 
 const TripButton = styled.button`
@@ -231,4 +221,11 @@ const LogoutButton = styled(ButtonTwo)`
   text-align: center;
 `;
 
+const Button = styled.button`
+  background: transparent;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+`;
 export default NavBar;

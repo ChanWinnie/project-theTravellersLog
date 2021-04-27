@@ -25,7 +25,7 @@ const Wrapper = styled.button`
   font-size: 15px;
 
   &:hover {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     color: ${styling.colorPrimary};
     border: 2px solid ${styling.colorPrimary};
   }
