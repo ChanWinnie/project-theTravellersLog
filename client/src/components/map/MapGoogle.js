@@ -257,8 +257,11 @@ const Searchbar = ({ panTo, setLocation, setCoordinates }) => {
 const ComboBoxWrapper = styled.div`
   z-index: 2;
   position: absolute;
-  margin-top: 15px;
-  left: 30%;
+  padding: 5px;
+  // To center:
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const InfoContainer = styled.div`
