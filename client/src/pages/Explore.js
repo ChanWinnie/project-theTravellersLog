@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { styling } from "../GlobalStyles";
-import MapGoogle from "../components/map/MapGoogle";
 import { useSelector } from "react-redux";
 import {
   onSmallPhoneMediaQuery,
   onTabletMediaQuery,
+  onDesktopMediaQuery,
+  onLargeDesktopMediaQuery,
 } from "../utils/responsives";
+import MapGoogle from "../components/map/MapGoogle";
 
 const Explore = () => {
   const userState = useSelector((state) => state);
@@ -194,18 +196,30 @@ const Explore = () => {
 };
 
 const Wrapper = styled.div`
-  margin: 20px auto 0 auto;
-  padding: 15px;
   width: 80%;
-  height: 85vh;
+  height: 100vh;
+
+  margin: 20px auto 0 auto;
+
   border-radius: ${styling.borderRadius};
   background-color: ${styling.backgroundColor};
+
+  ${onTabletMediaQuery()} {
+    padding: 15px;
+  }
+  ${onDesktopMediaQuery()} {
+    padding: 25px 15px 0px 15px;
+  }
+  ${onLargeDesktopMediaQuery()} {
+    padding: 25px 15px 0px 15px;
+  }
 `;
 
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   padding: 15px 0;
   font-weight: bold;
 `;
@@ -213,11 +227,11 @@ const FormContainer = styled.div`
 const Section = styled.div`
   display: flex;
   line-height: 2.5;
+
   ${onSmallPhoneMediaQuery()} {
     flex-direction: column;
     align-items: center;
   }
-
   ${onTabletMediaQuery()} {
     flex-direction: column;
     align-items: center;

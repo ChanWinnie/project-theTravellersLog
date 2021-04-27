@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { styling } from "../GlobalStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { handleFetchUser } from "../redux/fetchUserHelper";
@@ -8,10 +9,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { subDays, format } from "date-fns";
 import MapGoogle from "../components/map/MapGoogle";
-import { styling } from "../GlobalStyles";
 import {
-  onSmallPhoneMediaQuery,
   onTabletMediaQuery,
+  onDesktopMediaQuery,
+  onLargeDesktopMediaQuery,
 } from "../utils/responsives";
 
 const PlanTrip = () => {
@@ -129,7 +130,7 @@ const PlanTrip = () => {
 
   return (
     <Wrapper>
-      <h2 style={{ textAlign: "center" }}>Start Your Adventure</h2>
+      <h3 style={{ textAlign: "center" }}>Start Your Adventure</h3>
       <form onSubmit={(event) => handleAddTripToPlanner(event)}>
         <DataContainer>
           <Data>
@@ -211,11 +212,22 @@ const PlanTrip = () => {
 
 const Wrapper = styled.div`
   margin: 20px auto 0 auto;
-  padding: 15px;
+
   width: 80%;
-  height: 100vh;
+  min-height: 100vh;
+
   border-radius: ${styling.borderRadius};
   background-color: ${styling.backgroundColor};
+
+  ${onTabletMediaQuery()} {
+    padding: 15px;
+  }
+  ${onDesktopMediaQuery()} {
+    padding: 25px 15px 0px 15px;
+  }
+  ${onLargeDesktopMediaQuery()} {
+    padding: 25px 15px 0px 15px;
+  }
 `;
 
 const ViewPart = styled.div`
@@ -227,25 +239,23 @@ const ViewPart = styled.div`
 
 const DataContainer = styled.div`
   display: flex;
+  justify-content: space-evenly;
 
-  ${onSmallPhoneMediaQuery()} {
-    flex-direction: column;
-    align-items: center;
-  }
+  margin: 10px;
+
   ${onTabletMediaQuery()} {
     flex-direction: column;
     align-items: center;
   }
-
-  justify-content: space-evenly;
-  margin: 20px;
 `;
 
 const Data = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   margin-bottom: 10px;
+
   & input {
     margin-left: 10px;
     border: 1px solid gray;
@@ -253,18 +263,21 @@ const Data = styled.div`
 `;
 
 const AddTrip = styled.button`
+  width: 90px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  float: right;
+
+  margin-top: 10px;
+  padding: 7px 12px;
+
   background-color: ${styling.colorPrimary};
   color: white;
-  border-radius: ${styling.borderRadius};
-  margin-top: 10px;
-  padding: 8px 14px;
-  font-weight: bold;
-  width: 90px;
   border: 2px solid transparent;
-  float: right;
+  border-radius: ${styling.borderRadius};
+  font-weight: bold;
 
   &:hover {
     background-color: white;
