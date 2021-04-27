@@ -66,6 +66,11 @@ export default createGlobalStyle`
         font-size: 30px;
     }
 
+    h3 {
+        font-size: 22px;
+    }
+
+
     h2, 
     h3, 
     h4,
