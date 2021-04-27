@@ -104,7 +104,6 @@ const Container = styled.div`
   border-radius: ${styling.borderRadius};
   border: ${styling.border};
   background-color: ${styling.backgroundColor};
-  border: 5px solid blue;
 
   &::-webkit-scrollbar {
     height: 10px;

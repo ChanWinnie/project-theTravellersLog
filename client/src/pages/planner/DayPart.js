@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { styling } from "../../GlobalStyles";
+import { MdAdd } from "react-icons/md";
 import ModalPopUp from "../../components/modal/ModalPopUp";
 import UpdateModal from "../../components/modal/UpdateModal";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
@@ -141,6 +141,7 @@ const DayPart = ({
 const Wrapper = styled.div`
   height: 100%;
   padding: 0 5px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -153,8 +154,9 @@ const Tasks = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid gray;
+
   padding: 4px 0;
+  border-bottom: 1px solid gray;
   text-align: left;
 
   & p {
@@ -163,13 +165,14 @@ const Header = styled.div`
 `;
 
 const Button = styled.button`
-  border-radius: ${styling.borderRadius};
+  display: flex;
+  align-items: center;
   padding: 3px;
+
+  border-radius: ${styling.borderRadius};
   background-color: ${styling.colorPrimary};
   color: white;
   outline: none;
-  display: flex;
-  align-items: center;
 `;
 
 const ActivityContainer = styled.div`
@@ -184,8 +187,10 @@ const Activity = styled.button`
   border: none;
   border-radius: ${styling.borderRadius};
   outline: none;
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
 `;
+
 export default DayPart;

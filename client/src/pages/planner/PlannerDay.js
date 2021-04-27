@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 import DayPart from "./DayPart";
 import { onSmallPhoneMediaQuery } from "../../utils/responsives";
 
 const PlannerDay = ({ day, travelLength, trip }) => {
-  console.log(trip);
-
+  // console.log(trip);
+  //console.log(travelLength);
   const userState = useSelector((state) => state);
   const [weekday, setWeekday] = useState();
   const [date, setDate] = useState();
@@ -59,7 +59,6 @@ const PlannerDay = ({ day, travelLength, trip }) => {
     const eveningArray = getActivitiesArray(evening);
     setEveningActivities(eveningArray);
   }, [plannerActivities]);
-  //console.log(travelLength);
 
   return (
     <Wrapper length={travelLength}>
