@@ -16,7 +16,7 @@ const DayPart = ({
   trip,
 }) => {
   const [activitiesArray, setActivitiesArray] = useState(null);
-  const [orderChange, setOrderChange] = useState(false);
+  // const [orderChange, setOrderChange] = useState(false);
   const [updateModal, setUpdateModal] = useState(false);
 
   // To pass to updateModal:
@@ -46,12 +46,12 @@ const DayPart = ({
     const [reorderedToDo] = toDos?.splice(result?.source?.index, 1);
     toDos.splice(result?.destination?.index, 0, reorderedToDo);
     setActivitiesArray(toDos);
-    setOrderChange(true);
+    // setOrderChange(true);
   };
 
-  const handleSaveNewOrder = () => {
-    console.log("saved");
-  };
+  // const handleSaveNewOrder = () => {
+  //   console.log("saved");
+  // };
 
   //console.log(activitiesArray);
   return (

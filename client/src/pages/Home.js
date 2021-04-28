@@ -41,7 +41,7 @@ const Home = () => {
               <h3>Start Planning</h3>
               <FaPenAlt size={18} color={"#CD963E"} />
               <p>Pick your dates and your destination</p>
-              <p>Start filling in your itenerary!</p>
+              <p>Start logging in your itenerary!</p>
             </div>
             <ButtonTwo
               handleButtonClick={() => handleHomeButtonClick("plan")}

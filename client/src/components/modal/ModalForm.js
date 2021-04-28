@@ -85,8 +85,15 @@ const ModalForm = ({ timeOfDay, day, setShowModal, length }) => {
   if (error) {
     return (
       <Wrapper>
-        <div style={{ margin: "35px auto", color: "red" }}>
-          Error: you have exceeded your activities for this {timeOfDay}!
+        <div
+          style={{
+            margin: "65px auto",
+            color: "red",
+            fontFamily: "Open Sans",
+            fontSize: "25px",
+          }}
+        >
+          Oh no! You have exceeded your activities for this {timeOfDay}!
         </div>
       </Wrapper>
     );
