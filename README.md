@@ -13,21 +13,21 @@ Mapping functionality is completed using Google Maps API. User authentication is
 
 To start, users can name their trips and select their destination and travel dates.
 
-<img src="./screenshots/createATrip.png" width="500px">
+<img src="./screenshots/createATrip.png" width="650px">
 
 Once a trip is added, users will have access to their own itinerary. Users can easily add activities to their planner using react-modal. They also have the ability to update and delete. Activities added to the same time of day can also be rearranged using a drag and drop functionality.
 
-<img src="./screenshots/planYourTrip.png" width="500px">
+<img src="./screenshots/planYourTrip.png" width="650px">
 
 Another feature of this site is that users can use their trip destination to search for nearby places of interest. A user can select from a range of categories: dining, lodging, nightlife, tourist attractions, shopping, outdoors, and usefuls. The results are then mapped as markers on the map component. When a marker is selected, users are given extra information about the site (eg. price and rating).
 
-<img src="./screenshots/searchNearBy.png" width="500px">
+<img src="./screenshots/searchNearBy.png" width="650px">
 
 The website is also responsive for mobile, tablet and desktop formats.
 
-<img src="./screenshots/modileMenu.png" width="300px">
-<img src="./screenshots/modilePlan.png" width="300px">
+<img src="./screenshots/mobileMenu.png" width="400px">
+<img src="./screenshots/mobilePlan.png" width="400px">
 
 # Credits
 
-Toms Rīts (@piecdesmit) for website image
+Toms Rīts (@piecdesmit) for background image
