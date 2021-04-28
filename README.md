@@ -19,7 +19,7 @@ Once a trip is added, users will have access to their own itinerary. Users can e
 
 <img src="./screenshots/planYourTrip.png" width="600px">
 
-Another feature of this site is that users can use their trip destination to search for nearby places of interest. A user can select from a range of categories: dining, lodging, nightlife, tourist attractions, shopping, outdoors, and usefuls. The results are then mapped as markers on the map component. When a marker is selected, users are given extra information about the site (eg. price and rating).
+Another feature of this site is that users can use their trip destination to search for nearby places of interest. A user can select from a range of categories: dining, lodging, nightlife, tourist attractions, shopping, outdoors, and usefuls. The results are then mapped as markers on the map component. When a marker is selected, users are given extra information about the site: price and rating (if applicable).
 
 <img src="./screenshots/searchNearBy.png" width="600px">
 
