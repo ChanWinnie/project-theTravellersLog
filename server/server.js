@@ -11,11 +11,8 @@ const {
   removeUserTrip,
   addUsersTripTask,
   getPlacesByType,
-  addPlaceOfInterest,
   updateActivity,
   removeActivity,
-  deleteUserAccount,
-  removeNearbyPlace,
 } = require("./handlers");
 
 app.use(cors());
@@ -27,17 +24,14 @@ app.get("/", (req, res) => {
   res.send("Backend server is working :)");
 });
 
-app.get("/currentUser/:email", getUser);
 app.post("/signup", addUser);
+app.get("/currentUser/:email", getUser);
 app.post("/addtrip", addUsersTrip);
 app.delete("/remove", removeUserTrip);
 app.post("/addtask", addUsersTripTask);
-app.get("/getplaces/:lat/:lng/:type", getPlacesByType);
-app.post("/addplace", addPlaceOfInterest);
 app.put("/updateActivity", updateActivity);
 app.delete("/removeActivity", removeActivity);
-app.delete("/deleteAccount", deleteUserAccount);
-app.delete("/removeNearbyPlace", removeNearbyPlace);
+app.get("/getplaces/:lat/:lng/:type", getPlacesByType);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
